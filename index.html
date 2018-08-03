@@ -1,6 +1,28 @@
 <head>
   <title>CMD-EXE</title>
   <style>
+    .menu {
+      width: 120px;
+      box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: none;
+
+      .menu-options {
+        list-style: none;
+        padding: 10px 0;
+
+        .menu-option {
+          font-weight: 500;
+          font-size: 14px;
+          padding: 10px 40px 10px 20px;
+          cursor: pointer;
+
+          &:hover {
+            background: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
     body {
       background-image:url("http://oswallpapers.com/wp-content/uploads/2016/06/img0.jpg");
       background-size: 100% 100%;
@@ -26,6 +48,17 @@
 
 <body>
   <br>
+  
+  <div class="menu">
+  <ul class="menu-options">
+    <li class="menu-option">Copy</li>
+    <li class="menu-option">Reload</li>
+    <li class="menu-option">Save</li>
+    <li class="menu-option">Save As</li>
+    <li class="menu-option">Inspect</li>
+  </ul>
+</div>
+  
   <div id="cmdexe">
     <div id="cmdexeheader">CMD.exe v1.3</div>
     <textarea id="cmdexetext" style="resize: none;" rows="20" cols="52" spellcheck="false">CMD.exe, type: "help" for a list of commands</textarea>
@@ -34,6 +67,33 @@
 
 <script>
   //Make the DIV element draggagle:
+  const menu = document.querySelector(".menu");
+let menuVisible = false;
+
+const toggleMenu = command => {
+  menu.style.display = command === "show" ? "block" : "none";
+  menuVisible = !menuVisible;
+};
+
+const setPosition = ({ top, left }) => {
+  menu.style.left = `${left}px`;
+  menu.style.top = `${top}px`;
+  toggleMenu("show");
+};
+
+window.addEventListener("click", e => {
+  if(menuVisible)toggleMenu("hide");
+});
+
+window.addEventListener("contextmenu", e => {
+  e.preventDefault();
+  const origin = {
+    left: e.pageX,
+    top: e.pageY
+  };
+  setPosition(origin);
+  return false;
+});
 dragElement(document.getElementById("cmdexe"));
 
 function dragElement(elmnt) {

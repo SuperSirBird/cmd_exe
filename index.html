@@ -5,6 +5,9 @@
       background-image:url("http://oswallpapers.com/wp-content/uploads/2016/06/img0.jpg");
       background-size: 100% 100%;
     }
+    #cmdexetext {background-color:black;color:white;}
+    #cmdexeheader {background-color:rgba(0,0,0,0.5);color:white;}
+    .blur {filter: blur(10px);}
   </style>
 </head>
 
@@ -12,8 +15,9 @@
   <br>
   <div id="cmdexe">
     <div id="cmdexeheader">CMD.exe</div>
-    <textarea style="resize: none;" rows="20" cols="52">
+    <textarea id="cmdexetext" style="resize: none;" rows="20" cols="52">
       CMD.exe, type: "help" for a list of commands
     </textarea>
+    <div class="blur"></div>
   </div>
 </body>

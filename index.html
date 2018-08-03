@@ -222,7 +222,7 @@ function dragElement(elmnt) {
   // Destop Apps
   for (i=0;i<document.getElementsByClassName("desktopapp").length;i++) {
     appelement = document.getElementsByClassName("desktopapp")[i];
-    appelement[i].addEventListener("click", function(){
+    appelement.addEventListener("click", function(){
       this.style.background.color = "rgba(51, 204, 255,0.3)";
       this.style.border = "2px solid rgba(255,255,255,0.3)";
       this.style.padding = "5px";

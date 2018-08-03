@@ -94,11 +94,6 @@
       border: 2px solid rgba(255,255,255,0.1);
       padding:5px;
     }
-    .desktopapp:active {
-      background-color:rgba(51, 204, 255,0.3);
-      border: 2px solid rgba(255,255,255,0.3);
-      padding:5px;
-    }
   </style>
 </head>
 
@@ -222,4 +217,15 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
-}</script>
+  }
+  var appelement;
+  // Destop Apps
+  for (i=0;i<document.getElementsByClassName("desktopapp").length;i++) {
+    appelement = document.getElementsByClassName("desktopapp")[i];
+    appelement[i].addEventListener("click", function(){
+      this.style.background.color = "rgba(51, 204, 255,0.3)";
+      this.style.border = "2px solid rgba(255,255,255,0.3)";
+      this.style.padding = "5px";
+    })
+  }
+</script>

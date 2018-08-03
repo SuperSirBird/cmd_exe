@@ -54,6 +54,8 @@
     .menu-option:hover {
       background-color: #F0F3F4;
     }
+    
+    .menu-break {border-bottom: 2px solid gray;}
           
     body {
       background-image:url("http://oswallpapers.com/wp-content/uploads/2016/06/img0.jpg");
@@ -85,12 +87,16 @@
   
   <div class="menu">
   <ul class="menu-options">
-    <li class="menu-option">View</li>
-    <li class="menu-option">Sort By</li>
-    <li class="menu-option">Refresh</li>
-    <li class="menu-option-disabled">Paste</li>
-    <li class="menu-option-disabled">Paste Shortcut</li>
-    <li class="menu-option">NVIDIA Control Panel</li>
+    <div class="menu-break">
+      <li class="menu-option">View</li>
+      <li class="menu-option">Sort By</li>
+      <li class="menu-option">Refresh</li>
+    </div>
+    <div class="menu-break">
+      <li class="menu-option-disabled">Paste</li>
+      <li class="menu-option-disabled">Paste Shortcut</li>
+      <li class="menu-option">NVIDIA Control Panel</li>
+    </div>
     <li class="menu-option">New</li>
     <li class="menu-option">Screen Resolution</li>
     <li class="menu-option">Gadgets</li>

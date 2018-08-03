@@ -69,20 +69,24 @@
       margin-right:0%
     }
     textarea:focus {outline:0;}
-    #cmdexetext {background-color:black;color:white;border-size:0px;}
-    #cmdexeheader {
+    #cmdexeapptext {background-color:black;color:white;border-size:0px;}
+    #cmdexeappheader {
       padding: 4px;
       z-index: 10;
       background-color: rgba(0,0,0,0.5);
       color: #fff;}
-    #cmdexe {
+    #cmdexeapp {
       position: absolute;
       z-index: 9;
       border: 1px solid #d3d3d3;
       box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
       }
-    #cmdexeheader:hover {cursor: -webkit-grab; cursor: grab;}
-    #cmdexeheader:active {cursor: -webkit-grabbing; cursor: grabbing;}
+    #cmdexeappheader:hover {cursor: -webkit-grab; cursor: grab;}
+    #cmdexeappheader:active {cursor: -webkit-grabbing; cursor: grabbing;}
+    .desktopapp {
+      text-align:center;
+      color:white;
+    }
   </style>
 </head>
 
@@ -105,22 +109,31 @@
     <li class="menu-option">Screen Resolution</li>
     <li class="menu-option">Gadgets</li>
     <li class="menu-option">Personalise</li>
-    
   </ul>
 </div>
+  
   <div class="windowsbar">
     <a>Window 7 v1.0</a>
     <a><img src="https://www.icon2s.com/wp-content/uploads/2013/01/Win-Command-Prompt-cmd-icon.png" align="middle" width="21px"></a>
   </div>
   
-  <div id="cmdexe">
-    <div id="cmdexeheader">CMD.exe v1.3</div>
-    <textarea id="cmdexetext" style="resize: none;" rows="20" cols="52" spellcheck="false">CMD.exe, type: "help" for a list of commands</textarea>
+  <div id="desktop">
+    <div class="desktopapp">
+      <img src="https://www.icon2s.com/wp-content/uploads/2013/01/Win-Command-Prompt-cmd-icon.png" width="50px">
+      CMD.exe
+    </div>
+  </div>
+  
+  <div id="apps">
+    <div id="cmdexeapp">
+      <div id="cmdexeappheader">CMD.exe v1.3</div>
+      <textarea id="cmdexeapptext" style="resize: none;" rows="20" cols="52" spellcheck="false">CMD.exe, type: "help" for a list of commands</textarea>
+    </div>
   </div>
 </body>
 
 <script>
-  //Make the DIV element draggagle:
+  // Right click dropdown
   const menu = document.querySelector(".menu");
 let menuVisible = false;
 
@@ -148,7 +161,9 @@ window.addEventListener("contextmenu", e => {
   setPosition(origin);
   return false;
 });
-dragElement(document.getElementById("cmdexe"));
+  
+  // Dragable Windows
+dragElement(document.getElementById("cmdexeapp"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

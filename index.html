@@ -222,7 +222,7 @@ function dragElement(elmnt) {
   // Destop Apps
   
   // Onclick get rid of highlights
-  window.addEventListener("click", function(){
+  document.body.addEventListner("click", function(){
     for (i=0;i<document.getElementsByClassName("desktopapp").length;i++) {
       appelement = document.getElementsByClassName("desktopapp")[i];
       appelement.style.backgroundColor = "none";

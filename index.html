@@ -221,11 +221,21 @@ function dragElement(elmnt) {
   }
   }
   var appelement;
+  var clearapps = "0";
   // Destop Apps
   
   // Onclick get rid of highlights
   
   // Onclick Highlight
+  document.addEventListner("click", function() {
+    if (clearapps == "1") {
+      for (i=0;i<document.getElementsByClassName("desktopapp").length;i++) {
+        appelement = document.getElementsByClassName("desktopapp")[i];
+        appelement.style.backgroundColor = "rgba(0, 0, 0,0)";
+        appelement.style.border = "2px solid rgba(0,0,0,0)";
+      }
+    }
+  })
   for (i=0;i<document.getElementsByClassName("desktopapp").length;i++) {
     appelement = document.getElementsByClassName("desktopapp")[i];
     appelement.addEventListener("click", function(){

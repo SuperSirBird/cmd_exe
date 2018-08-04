@@ -222,9 +222,9 @@ function dragElement(elmnt) {
   for (i=0;i<document.getElementsByClassName("desktopapp").length;i++) {
     appelement = document.getElementsByClassName("desktopapp")[i];
     appelement.addEventListener("click", function(){
-      e.currentTarget.style.backgroundColor = "rgba(51, 204, 255,0.3)";
-      e.currentTarget.target.style.border = "2px solid rgba(255,255,255,0.3)";
-      e.currentTarget.target.style.padding = "5px";
+      event.currentTarget.style.backgroundColor = "rgba(51, 204, 255,0.3)";
+      event.currentTarget.target.style.border = "2px solid rgba(255,255,255,0.3)";
+      event.currentTarget.target.style.padding = "5px";
     })
   }
 </script>
